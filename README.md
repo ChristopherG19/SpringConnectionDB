@@ -1,6 +1,6 @@
 ## Práctica#2
 - Descripción
-  - Debe crearse una conexión a una base de datos en OracleXE donde se encuentren 5 tablas. Se puede realizar: insert/update y select de todas las tablas
+  - Debe crearse una conexión a una base de datos en OracleXE donde se encuentren 5 tablas. Se puede realizar: insert/update, delete y select de todas las tablas
     - Una tabla simple (primary key, diferentes campos) (PERSONA)
     - 2 tablas con la notación y relación "@OneToMany" (USERINSTA, AUTHOR)
     - 2 tablas con la notación y relación "@ManyToOne" (PHOTO, BOOK)
