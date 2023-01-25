@@ -4,7 +4,7 @@
 
 - Resultados:
   - Nombre tablas: authors, books, clientes, facturas, personas, photos, users
-  - Select a la tabla utilizar: http://localhost:8686/{nombre tabla}/consultar
-  - Insert/Update a la tabla utilizar: http://localhost:8686/{nombre tabla}/guardar
-  - Delete a la tabla utilizar: http://localhost:8686/{nombre tabla}/eliminar/{id}
+  - Select a la tabla utilizar: http://localhost:8686/{nombreTabla}/consultar
+  - Insert/Update a la tabla utilizar: http://localhost:8686/{nombreTabla}/guardar
+  - Delete a la tabla utilizar: http://localhost:8686/{nombreTabla}/eliminar/{id}
 
