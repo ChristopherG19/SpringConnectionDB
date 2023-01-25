@@ -25,4 +25,9 @@ public class ControladorPersona implements IntPersona{
 		return personaRepository.save(persona);
 	}
 
+	@Override
+	public void deletePerson(String id) {
+		personaRepository.deleteById(id);
+	}
+	
 }

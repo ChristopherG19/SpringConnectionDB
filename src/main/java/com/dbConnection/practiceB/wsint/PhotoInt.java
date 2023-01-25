@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbConnection.practiceB.entity.UserInsta;
 import com.dbConnection.practiceB.entity.Photo;
 
 @RestController
@@ -21,6 +20,4 @@ public interface PhotoInt {
 
 	@PostMapping("/guardar")
 	public Photo guardar(@RequestBody Photo foto);
-	
-	public UserInsta verificacion(Photo foto);
 }

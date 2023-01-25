@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.dbConnection.practiceB.entity.Author;
 
-@Repository("pageRepository")
+@Repository("authorRepository")
 public interface AuthorRepository extends JpaRepository<Author, Serializable>{
-
 }

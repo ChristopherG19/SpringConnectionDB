@@ -2,17 +2,9 @@ package com.dbConnection.practiceB.entity;
 
 import java.io.Serializable;
 
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,19 +23,8 @@ public class Photo implements Serializable{
 	@Column(name = "URL")
 	private String url;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "USERID")
-	@JsonIgnoreProperties
-	@NotFound(action = NotFoundAction.IGNORE)
-	private UserInsta userInsta;
-	
-	public UserInsta getUserInsta() {
-		return userInsta;
-	}
-
-	public void setUserInsta(UserInsta userInsta) {
-		this.userInsta = userInsta;
-	}
+	@Column(name = "USERID")
+	private int userInsta;
 
 	public int getPhotoId() {
 		return photoId;
@@ -69,4 +50,12 @@ public class Photo implements Serializable{
 		this.url = url;
 	}
 
+	public int getUserInsta() {
+		return userInsta;
+	}
+
+	public void setUserInsta(int userInsta) {
+		this.userInsta = userInsta;
+	}
+	
 }

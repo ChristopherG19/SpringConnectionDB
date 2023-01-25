@@ -2,17 +2,9 @@ package com.dbConnection.practiceB.entity;
 
 import java.io.Serializable;
 
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,11 +17,8 @@ public class Book implements Serializable{
 	@Column(name="ID")
 	private int id;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "AUTHORID")
-	@JsonIgnoreProperties
-	@NotFound(action = NotFoundAction.IGNORE)
-	private Author author;
+	@Column(name="AUTHORID")
+	private int authorId;
 
 	@Column(name = "TITLE")
 	private String titulo;
@@ -47,13 +36,13 @@ public class Book implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public Author getAuthor() {
-		return author;
+	
+	public int getAuthorId() {
+		return authorId;
 	}
 
-	public void setAuthor(Author author) {
-		this.author = author;
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
 	}
 
 	public String getTitulo() {

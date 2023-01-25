@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbConnection.practiceB.entity.Author;
 import com.dbConnection.practiceB.entity.Book;
 
 @RestController
@@ -22,6 +21,5 @@ public interface BookInt {
 
 	@PostMapping("/guardar")
 	public Book guardar(@RequestBody Book book);
-	
-	public Author verificacion(Book book);
+
 }

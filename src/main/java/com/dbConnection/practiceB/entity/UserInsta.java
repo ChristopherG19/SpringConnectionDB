@@ -3,13 +3,11 @@ package com.dbConnection.practiceB.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -32,9 +30,8 @@ public class UserInsta implements Serializable{
 	@Column(name = "AGE")
 	private int edad;
 	
-	@OneToMany(mappedBy = "userInsta", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonIgnore
-	@JsonIgnoreProperties
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "USERID")
 	private List<Photo> photos;
 
 	public int getId() {

@@ -9,5 +9,4 @@ import com.dbConnection.practiceB.entity.Persona;
 
 @Repository("personaRepository")
 public interface PersonaRepository extends JpaRepository<Persona, Serializable>{
-	
 }
