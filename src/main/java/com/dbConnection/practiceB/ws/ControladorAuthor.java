@@ -34,7 +34,6 @@ public class ControladorAuthor implements AuthorInt {
 	public void deleteAuthor(int id) {
 		Optional<Author> autor = authorRepository.findById(id);
 		if (autor.isPresent()) {
-			System.out.println("Si hay");
 			authorRepository.delete(autor.get());
 		}
 	}

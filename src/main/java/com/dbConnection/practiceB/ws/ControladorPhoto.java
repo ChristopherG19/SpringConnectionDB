@@ -25,4 +25,9 @@ public class ControladorPhoto implements PhotoInt{
 		return photoRepository.save(foto);
 	}
 
+	@Override
+	public void deletePhoto(int id) {
+		photoRepository.deleteById(id);
+	}
+
 }

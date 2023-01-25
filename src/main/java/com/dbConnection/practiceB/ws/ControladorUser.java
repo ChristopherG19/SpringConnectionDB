@@ -1,6 +1,7 @@
 package com.dbConnection.practiceB.ws;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,14 @@ public class ControladorUser implements UserInt{
 	@Override
 	public UserInsta guardar(UserInsta usuario) {
 		return userInstaRepository.save(usuario);
+	}
+
+	@Override
+	public void deleteUserInsta(int id) {
+		Optional<UserInsta> userI = userInstaRepository.findById(id);
+		if (userI.isPresent()) {
+			userInstaRepository.delete(userI.get());
+		}
 	}
 	
 }

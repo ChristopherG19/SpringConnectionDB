@@ -23,4 +23,9 @@ public class ControladorBook implements BookInt{
 	public Book guardar(Book book) {
 		return bookRepository.save(book);
 	}
+
+	@Override
+	public void deleteBook(int id) {
+		bookRepository.deleteById(id);
+	}
 }
