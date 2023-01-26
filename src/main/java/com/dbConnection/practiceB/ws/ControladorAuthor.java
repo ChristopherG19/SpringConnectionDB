@@ -33,5 +33,11 @@ public class ControladorAuthor implements AuthorInt {
 			authorRepository.delete(autor.get());
 		}
 	}
+	
+	// Consultas DSl
+	@Override
+	public List<Author> buscarPorIsAlive(String estado) {
+		return authorRepository.findByIsAliveEquals(estado);
+	}
 
 }

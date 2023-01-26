@@ -30,4 +30,9 @@ public class ControladorPhoto implements PhotoInt{
 		photoRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Photo> buscarByExtension(String extension) {
+		return photoRepository.findByUrlEndingWith(extension);
+	}
+
 }

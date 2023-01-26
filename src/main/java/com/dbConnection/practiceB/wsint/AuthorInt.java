@@ -26,4 +26,7 @@ public interface AuthorInt {
 	
 	@DeleteMapping("/eliminar/{id}")
 	public void deleteAuthor(@PathVariable("id") int id);
+	
+	@GetMapping("/consultar/isAlive/{estado}")
+	public List<Author> buscarPorIsAlive(@PathVariable("estado") String estado);
 }

@@ -1,6 +1,7 @@
 package com.dbConnection.practiceB.wsint;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,7 +21,16 @@ public interface IntPersona {
 	
 	@GetMapping("/consultar")
 	public List<Persona> buscarPersona();
+	
+	@GetMapping("/consultar/nombre/{nombre}")
+	public List<Persona> buscarPersonaPorNombre(@PathVariable("nombre") String nombre);
 
+	@GetMapping("/consultar/nombre2/{nombre}")
+	public List<Map<String, Object>> buscarPorNombre(@PathVariable("nombre") String nombre);
+	
+	@GetMapping("/consultar/edadmenor/{edad}")
+	public List<Persona> buscarPorMenorEdad(@PathVariable("edad") Integer edad);
+	
 	@PostMapping("/guardar")
 	public Persona guardar(@RequestBody Persona persona);
 	

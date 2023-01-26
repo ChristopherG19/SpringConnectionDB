@@ -1,6 +1,7 @@
 package com.dbConnection.practiceB.wsint;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +21,14 @@ public interface BookInt {
 	
 	@GetMapping(path="/consultar")
 	public List<Book> buscarLibros();
+	
+	// Consultas DSl
+	@GetMapping(path="/consultar/genero/{genre}")
+	public List<Book> buscarByGenero(@PathVariable("genre") String genre);
+	
+	// Consultas personalizadas
+	@GetMapping("/consultar/libroautor/{nombre}")
+	public List<Map<String, Object>> buscarLibroPorNombre(@PathVariable("nombre") String nombre);
 
 	@PostMapping("/guardar")
 	public Book guardar(@RequestBody Book book);

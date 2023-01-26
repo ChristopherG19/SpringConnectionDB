@@ -30,4 +30,9 @@ public class ControladorFactura implements FacturaInt{
 		facturaRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Factura> buscarByMontos(int montoA, int montoB) {
+		return facturaRepository.findByMontoBetween(montoA, montoB);
+	}
+
 }

@@ -19,6 +19,9 @@ import com.dbConnection.practiceB.entity.Photo;
 public interface PhotoInt {
 	@GetMapping(path="/consultar")
 	public List<Photo> buscarFotos();
+	
+	@GetMapping(path="/consultar/urls/{extension}")
+	public List<Photo> buscarByExtension(@PathVariable("extension") String extension);
 
 	@PostMapping("/guardar")
 	public Photo guardar(@RequestBody Photo foto);

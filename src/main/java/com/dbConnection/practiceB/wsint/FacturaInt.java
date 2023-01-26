@@ -20,6 +20,10 @@ public interface FacturaInt {
 	
 	@GetMapping(path="/consultar")
 	public List<Factura> buscarFactura();
+	
+	@GetMapping(path="/consultar/montos/{montoA}/{montoB}")
+	public List<Factura> buscarByMontos(@PathVariable("montoA") int montoA, 
+			@PathVariable("montoB") int montoB);
 
 	@PostMapping("/guardar")
 	public Factura guardar(@RequestBody Factura factura);
