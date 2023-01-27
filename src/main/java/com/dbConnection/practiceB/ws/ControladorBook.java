@@ -39,8 +39,16 @@ public class ControladorBook implements BookInt{
 		return bookRepository.findByGeneroContaining(genre);
 	}
 
+	// Consultas personalizadas
 	@Override
 	public List<Map<String, Object>> buscarLibroPorNombre(String nombre) {
 		return bS.buscarLibroPorNombre(nombre);
 	}
+
+	@Override
+	public void insertBook(Book book) {
+		bS.Start(book.getId(), book.getAuthorId(), book.getTitulo(), book.getCantPages(), book.getGenero());
+	}
+
+
 }

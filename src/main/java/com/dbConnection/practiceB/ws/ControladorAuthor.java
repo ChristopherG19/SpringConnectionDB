@@ -39,5 +39,4 @@ public class ControladorAuthor implements AuthorInt {
 	public List<Author> buscarPorIsAlive(String estado) {
 		return authorRepository.findByIsAliveEquals(estado);
 	}
-
 }

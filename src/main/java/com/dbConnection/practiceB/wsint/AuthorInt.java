@@ -29,4 +29,5 @@ public interface AuthorInt {
 	
 	@GetMapping("/consultar/isAlive/{estado}")
 	public List<Author> buscarPorIsAlive(@PathVariable("estado") String estado);
+
 }

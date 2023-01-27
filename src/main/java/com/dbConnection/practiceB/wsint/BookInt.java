@@ -30,6 +30,10 @@ public interface BookInt {
 	@GetMapping("/consultar/libroautor/{nombre}")
 	public List<Map<String, Object>> buscarLibroPorNombre(@PathVariable("nombre") String nombre);
 
+	// Consultas personalizadas
+	@PostMapping("/publicar")
+	public void insertBook(@RequestBody Book book);
+	
 	@PostMapping("/guardar")
 	public Book guardar(@RequestBody Book book);
 	
