@@ -1,4 +1,4 @@
-## Práctica#2
+## Práctica#1.2
 - Descripción
   - Pt.1: Debe crearse una conexión a una base de datos en OracleXE donde se encuentren 5 tablas. Se puede realizar: insert/update, delete y select de todas las tablas que poseen diferentes relaciones OneToMany y ManyToOne
   - Pt.2: Crear 5 consultas DSL, 1 consulta personalizada que contenga un join y Creación y consumo de un procedimiento almacenado
