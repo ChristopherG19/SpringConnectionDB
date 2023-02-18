@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dbConnection.practiceB.dto.SalidaFuncionDTO;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTO;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTO2;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTOFusion;
 import com.dbConnection.practiceB.entity.Persona;
 
 @RestController
@@ -37,4 +41,15 @@ public interface IntPersona {
 	@DeleteMapping("/eliminar/{id}")
 	public void deletePerson(@PathVariable("id") String id);
 	
+	@GetMapping("/funcion/{texto}/{numero}")
+	public SalidaFuncionDTO ejectuarFuncion(@PathVariable String texto,@PathVariable int numero);
+	
+	@GetMapping("/proce/{texto}/{numeroA}/{numeroB}")
+	public SalidaProcedimientoDTO ejectuarProcedimientoDe(@PathVariable String texto, @PathVariable Double numeroA, @PathVariable Double numeroB);
+	
+	@GetMapping("/proce2/{texto}/{numeroA}/{numeroB}")
+	public SalidaProcedimientoDTO2 ejectuarProcedimientoSinDe(@PathVariable String texto, @PathVariable int numeroA, @PathVariable int numeroB);
+	
+	@GetMapping("/proce3/{texto}/{numeroA}/{numeroB}")
+	public SalidaProcedimientoDTOFusion ejectuarProcedimientoFusion(@PathVariable String texto, @PathVariable Double numeroA, @PathVariable Double numeroB);
 }

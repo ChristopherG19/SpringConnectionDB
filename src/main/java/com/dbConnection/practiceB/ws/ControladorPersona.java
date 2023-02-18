@@ -6,6 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.dbConnection.practiceB.dto.SalidaFuncionDTO;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTO;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTO2;
+import com.dbConnection.practiceB.dto.SalidaProcedimientoDTOFusion;
 import com.dbConnection.practiceB.entity.Persona;
 import com.dbConnection.practiceB.repository.PersonaRepository;
 import com.dbConnection.practiceB.service.PersonaServicio;
@@ -51,5 +55,26 @@ public class ControladorPersona implements IntPersona{
 	public List<Map<String, Object>> buscarPorNombre(String nombre) {
 		return pS.buscarPorNombre(nombre);
 	}
+
+	@Override
+	public SalidaFuncionDTO ejectuarFuncion(String texto, int numero) {
+		return pS.funcionBd(texto, numero);
+	}
+
+	@Override
+	public SalidaProcedimientoDTO ejectuarProcedimientoDe(String texto, Double numeroA, Double numeroB) {
+		return pS.procedimientoBdD(texto, numeroA, numeroB);
+	}
+
+	@Override
+	public SalidaProcedimientoDTO2 ejectuarProcedimientoSinDe(String texto, int numeroA, int numeroB) {
+		return pS.procedimientoBdSD(texto, numeroA, numeroB);
+	}
+
+	@Override
+	public SalidaProcedimientoDTOFusion ejectuarProcedimientoFusion(String texto, Double numeroA, Double numeroB) {
+		return pS.procedimientoBdFusion(texto, numeroA, numeroB);
+	}
+
 	
 }

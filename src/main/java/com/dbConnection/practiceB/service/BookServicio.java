@@ -38,7 +38,6 @@ public class BookServicio {
 	}
 
 	public void Start(int b_id, int a_id, String title, int cantPages, String genre) {
-		jdbcTemplate.execute(SQL_STORED_PROC);
 		bookRepository.insertBook(b_id, a_id, title, cantPages, genre);
 	}
 
